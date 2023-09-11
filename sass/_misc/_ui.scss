@@ -1,0 +1,14 @@
+/*--------------------ui----------------------*/
+.block-header {}
+.block-header--center {}
+.block-header__title {
+	color: $darkText;
+	font-size: rem(52);
+	font-weight: 700;
+	line-height: calc(64/52);
+	// @include adaptive-value('font-size', 52, 24, 1);
+}
+.block-header__title--big {}
+.block-header__wht {}
+.block-header__text {}
+/*--------------------END ui----------------------*/ 
