@@ -114,6 +114,7 @@ ul, li {
 }
 
 h1, h2, h3, h4, h5, h6 {
+  margin: 0;
   font-weight: inherit;
   font-size: inherit;
 }
@@ -215,15 +216,30 @@ h1 {
 
 /*--------------------END adjustment----------------------*/
 /*--------------------ui----------------------*/
+.block-header {
+  display: -ms-grid;
+  display: grid;
+  gap: 1.5rem;
+}
+
 .block-header__title {
   color: #171921;
   font-weight: 700;
   font-size: 52px;
 }
-@media (min-width: 1440px) {
+@media (max-width: 1440px) {
   .block-header__title {
-    font-size: calc(24px + 28 * ((100vw - 320px) / 1600));
+    font-size: calc(24px + 28 * ((100vw - 320px) / 1120));
   }
+}
+
+.block-header--horizontal {
+  -ms-grid-columns: (auto)[2];
+  grid-template-columns: repeat(2, auto);
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-align: end;
+  align-items: end;
 }
 
 /*--------------------END ui----------------------*/
