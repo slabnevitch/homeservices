@@ -3,10 +3,10 @@
 .block-header--center {}
 .block-header__title {
 	color: $darkText;
-	font-size: rem(52);
+	// font-size: rem(52);
 	font-weight: 700;
-	line-height: calc(64/52);
-	// @include adaptive-value('font-size', 52, 24, 1);
+	// @include adaptive-value-rem('font-size', 52, 24, 1920, 320, 2);
+	@include adaptive-value('font-size', 52, 24, 2);
 }
 .block-header__title--big {}
 .block-header__wht {}

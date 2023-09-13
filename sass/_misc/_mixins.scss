@@ -328,6 +328,30 @@ $rootFontSize: 16px;
  		#{$property}: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthContainer}));
  }
 }
+@mixin adaptive-value-rem($property, $pcSize, $mobSize, $maxWidth, $minWidth, $type) { //$type = 1 -- 
+ // $minScreenSize = $minScreenSize || 320px;
+ // $addSize: $pcSize - $mobSize;
+ 
+ 	$slope: ($pcSize - $mobSize) / ($maxWidth - $minWidth);
+	$yAxisIntersection: -$minWidth * $slope + $mobSize;
+	$preferredValue: #{rem($yAxisIntersection)}" + " #{$slope * 100}vw;
+	$propertyValue: #{"clamp(" rem($mobSize) "," $preferredValue "," rem($pcSize) ")"};
+ 
+ @if $type == 1{//использовать если ширина экрана меньше $maxWidthContainer
+ 		#{$property}: rem($pcSize);
+ 		@media (max-width: em($maxWidthContainer)){
+ 			#{$property}: #{"clamp("rem($mobSize)","$preferredValue","rem($pcSize)")"};
+ 		}
+ }@else if $type == 2{//использовать если ширина экрана больше $maxWidthContainer
+ 		#{$property}: rem($pcSize);
+ 		@media (min-width: em($maxWidthContainer)){
+			#{$property}: $propertyValue;
+ 		}
+ }@else{//на всей ширине экрана
+
+ 		#{$property}: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthContainer}));
+ }
+}
 
 @mixin adaptive-padding($pcSize, $mobSize, $side) {
  $addSize: $pcSize - $mobSize;

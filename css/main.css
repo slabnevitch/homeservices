@@ -217,9 +217,13 @@ h1 {
 /*--------------------ui----------------------*/
 .block-header__title {
   color: #171921;
-  font-size: 3.25rem;
   font-weight: 700;
-  line-height: 1.2307692308;
+  font-size: 52px;
+}
+@media (min-width: 1440px) {
+  .block-header__title {
+    font-size: calc(24px + 28 * ((100vw - 320px) / 1600));
+  }
 }
 
 /*--------------------END ui----------------------*/
