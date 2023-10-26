@@ -328,7 +328,7 @@ $rootFontSize: 16px;
  		#{$property}: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthContainer}));
  }
 }
-@mixin adaptive-value-rem($property, $pcSize, $mobSize, $maxWidth, $minWidth, $type) { //$type = 1 -- 
+@mixin adaptive-value-rem($property, $pcSize, $mobSize, $maxWidth: $maxWidth, $minWidth: $minWidth, $type) { //$type = 1 -- 
  // $minScreenSize = $minScreenSize || 320px;
  // $addSize: $pcSize - $mobSize;
  

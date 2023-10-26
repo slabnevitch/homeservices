@@ -119,6 +119,10 @@ h1, h2, h3, h4, h5, h6 {
   font-size: inherit;
 }
 
+p {
+  margin: 0;
+}
+
 input input[type=text],
 input[type=email],
 input[type=tel],
@@ -214,6 +218,52 @@ h1 {
   }
 }
 
+.toggle-mnu {
+  position: fixed;
+  right: 30px;
+  top: 15px;
+  display: block;
+  width: 28px;
+  height: 28px;
+  margin-top: 14px;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+}
+.toggle-mnu span:after, .toggle-mnu span:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 9px;
+}
+.toggle-mnu span:after {
+  top: 18px;
+}
+.toggle-mnu span {
+  position: relative;
+  display: block;
+}
+.toggle-mnu span, .toggle-mnu span:after, .toggle-mnu span:before {
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+  transition: all 0.3s;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 2px;
+}
+.toggle-mnu.on span {
+  background-color: transparent;
+}
+.toggle-mnu.on span:before {
+  -ms-transform: rotate(45deg) translate(-1px, 0px);
+  transform: rotate(45deg) translate(-1px, 0px);
+}
+.toggle-mnu.on span:after {
+  -ms-transform: rotate(-45deg) translate(6px, -7px);
+  transform: rotate(-45deg) translate(6px, -7px);
+}
+
 /*--------------------END adjustment----------------------*/
 /*--------------------ui----------------------*/
 .block-header {
@@ -222,24 +272,46 @@ h1 {
   gap: 1.5rem;
 }
 
+.block-header--center {
+  text-align: center;
+}
+
 .block-header__title {
   color: #171921;
   font-weight: 700;
-  font-size: 52px;
+  font-size: 3.25rem;
+  line-height: 1.23;
 }
-@media (max-width: 1440px) {
+@media (max-width: 90em) {
   .block-header__title {
-    font-size: calc(24px + 28 * ((100vw - 320px) / 1120));
+    font-size: clamp( 1.5rem , 1.15rem  +  1.75vw , 3.25rem );
+  }
+}
+
+.block-header__title--big {
+  font-size: 4rem;
+}
+@media (max-width: 90em) {
+  .block-header__title--big {
+    font-size: clamp( 2.75rem , 2.5rem  +  1.25vw , 4rem );
   }
 }
 
 .block-header--horizontal {
-  -ms-grid-columns: (auto)[2];
-  grid-template-columns: repeat(2, auto);
+  -ms-grid-columns: minmax(auto, 36.625rem) minmax(auto, 38.3125rem);
+  grid-template-columns: minmax(auto, 36.625rem) minmax(auto, 38.3125rem);
   -ms-flex-pack: justify;
   justify-content: space-between;
   -ms-flex-align: end;
   align-items: end;
+}
+
+.block-header__wht {
+  color: #fff;
+}
+
+.block-header__text p {
+  line-height: 155.556%;
 }
 
 /*--------------------END ui----------------------*/
@@ -324,15 +396,6 @@ h1 {
 }
 
 /*--------------------END cart-page__left----------------------*/
-.header .sidebar-menu {
-  display: -ms-flexbox;
-  display: flex;
-}
-.header .sidebar-menu .dl-submenu {
-  opacity: 0;
-  visibility: hidden;
-}
-
 /*--------------------_right-sidebar----------------------*/
 .right-info .author div {
   font-size: 12px;
