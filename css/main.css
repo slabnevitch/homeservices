@@ -424,6 +424,7 @@ h1 {
 }
 
 .header__container {
+  max-width: 99.625rem;
   min-height: 5rem;
   display: -ms-grid;
   display: grid;

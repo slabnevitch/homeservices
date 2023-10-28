@@ -7,6 +7,7 @@
 	background-color: $accent;
 }
 .header__container {
+	max-width: rem(1594);
 	min-height: rem(80);
 	display: grid;
 	grid-template-columns: rem(180) 1fr rem(180);
