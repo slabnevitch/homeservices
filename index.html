@@ -15,12 +15,22 @@
           <div class="header__logo"><img src="img/logo.svg" alt="logo"></div>
           <div class="header__menu menu-header">
             <button class="toggle-mnu"><span></span></button>
-            <nav class="menu-header__body">
+            <nav data-da="mob-menu-box,767.98,first" class="menu-header__body">
+              <div class="menu-header__top">
+                <div class="menu-header__logo"><img src="img/logo.svg" alt="alt"></div>
+                <div class="menu-header__close">
+                  <div class="toggle-mnu on toggle-mnu--close"><span></span></div>
+                </div>
+              </div>
                   <ul class="menu-header__list">
-                    <li class="menu-header__item"><a href="#" class="menu-header__link">Menu-item</a></li>
+                    <li class="menu-header__item"><a href="#" class="menu-header__link">About Us</a></li>
+                    <li class="menu-header__item"><a href="#" class="menu-header__link">Services</a></li>
+                    <li class="menu-header__item"><a href="#" class="menu-header__link">Our Blog</a></li>
+                    <li class="menu-header__item"><a href="#" class="menu-header__link">Contact </a></li>
                   </ul>
             </nav>
           </div>
+          <div data-da="menu-header__body,767.98,last" class="header__schedule">24 Hour Services</div>
         </div>
       </header>
       <div class="main-content">
@@ -31,6 +41,8 @@
               <p>You need help for home care? We are home care professionals focused in the US region. We provide several services that support home services</p>
             </div>
           </div>
+          <div class="cover"></div>
+          <div class="mob-menu-box"></div>
         </div>
       </div>
       <footer class="footer"></footer>
@@ -39,7 +51,7 @@
     
     
     
-    <script src="js/libs/counter/counter.js"></script>
+    <script src="js/libs/dynamic-adaptive/da.min.js"></script>
     <script src="js/common.js"></script>
   </body>
 </html>

@@ -1,10 +1,143 @@
-.header {}
-.header__container {}
-.header__logo {}
-.header__menu {}
+.header {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	z-index: 30;
+	background-color: $accent;
+}
+.header__container {
+	min-height: rem(80);
+	display: grid;
+	grid-template-columns: rem(180) 1fr rem(180);
+	align-items: center;
+	gap: rem(15);
+	padding-top: rem(10);
+	padding-bottom: rem(10);
+
+	@include max-screen($sm){
+		min-height: rem(56);
+	}
+
+}
+.header__logo {
+	img{
+		max-width: 100%;
+	}
+}
+.header__menu {
+	justify-self: center;
+}
 .menu-header {}
 .toggle-mnu {}
-.menu-header__body {}
-.menu-header__list {}
-.menu-header__item {}
-.menu-header__link {}
+.menu-header__body {
+	@include menu-mob($media: $sm);
+	@include max-screen($sm){
+		display: flex;
+		flex-direction: column;
+		padding-bottom: rem(36);
+		max-width: rem(272);
+		background-color: $accent;
+		overflow-y: visible;
+		z-index: 32;
+
+	}
+}
+.menu-header__list {
+	display: flex;
+	flex-wrap: wrap;
+	row-gap: rem(5);
+	@include adaptive-value-rem('column-gap', 57, -5, $maxWidth, $minWidth, 1);
+
+	@include max-screen($sm){
+		padding: 0 rem(24);
+		flex-direction: column;
+		flex: 1 1 auto;
+		text-align: center;
+		overflow-y: auto;
+		flex-wrap: nowrap;
+	}
+}
+.menu-header__item {
+	list-style-type: none;
+}
+.menu-header__link {
+	font-style: normal;
+	font-weight: 700;
+	line-height:  133.333%;
+	color: #fff;
+	text-decoration: none;
+
+	@include max-screen($sm){
+		display: block;
+		padding: rem(32);
+	}
+
+	@media (any-hover: hover) { //только для устройств с ховером
+			&:hover{
+				text-decoration: underline;
+			}
+		}
+}
+.menu-header__top{
+	flex-shrink: 0;
+	display: none;
+	align-items: center;
+	justify-content: space-between;
+	height: rem(56);
+	border-bottom: 1px solid #1F3584;
+	
+
+	@include max-screen($sm){
+		display: flex;
+		padding: 0 rem(24);
+	}
+}
+
+.menu-header__logo{
+	flex: 0 0 rem(176);
+}
+
+.menu-header__close{
+
+}
+	
+.toggle-mnu--close{
+	position: static;
+	transform: scale(.8);
+	margin-top: rem(7);
+	&.on span:after{
+		transform: rotate(-45deg) translate(5px, -6px);
+ 	 }
+}
+
+.header__schedule{
+	justify-self: end;
+	display: flex;
+	align-items: center;
+	column-gap: rem(10);
+	font-style: normal;
+	font-weight: 700;
+	line-height:  133.333%;
+	color: #fff;
+
+	&:before{
+		content: '';
+		display: block;
+		width: rem(12);//для предотвращения схлопывания текста во флекс-элементе
+		flex: 0 0 rem(12);
+		height: rem(12);
+		border-radius: 100%;
+		background-color: #FF5E5E;
+	}
+
+	@include max-screen($sm){
+		justify-content: center;
+	}
+
+}
+.mob-menu-box{
+	z-index: 31;
+	@include menu-mob($media: $sm);
+
+}

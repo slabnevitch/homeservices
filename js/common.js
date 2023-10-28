@@ -82,5 +82,15 @@
 	document.addEventListener('DOMContentLoaded', function() {
 		console.log('DOMContentLoaded!');
 		
-		});
+		document.querySelector('.toggle-mnu:not(.toggle-mnu--close)').onclick = function(e) {
+			// this.classList.toggle('on');
+			document.documentElement.classList.add('menu-opened');
+			document.documentElement.classList.add('lock');
+		}
+		document.querySelector('.toggle-mnu--close').onclick = function(e) {
+			// this.classList.toggle('on');
+			document.documentElement.classList.remove('menu-opened');
+			document.documentElement.classList.remove('lock');
+		}	
+	});
 })();

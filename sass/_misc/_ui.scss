@@ -10,12 +10,12 @@
 	color: $darkText;
 	// font-size: rem(52);
 	font-weight: 700;
-	@include adaptive-value-rem('font-size', 52, 24, 1920, 320, 1);
+	@include adaptive-value-rem('font-size', 52, 24, $maxWidth, $minWidth, 1);
 	// @include adaptive-value('font-size', 52, 24, 1);
 	line-height: 1.23;
 }
 .block-header__title--big {
-	@include adaptive-value-rem('font-size', 64, 44, 1920, 320, 1);
+	@include adaptive-value-rem('font-size', 64, 44, $maxWidth,$minWidth, 1);
 
 }
 .block-header--horizontal {
