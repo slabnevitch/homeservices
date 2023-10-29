@@ -15,7 +15,7 @@
 	line-height: 1.23;
 }
 .block-header__title--big {
-	@include adaptive-value-rem('font-size', 64, 44, $maxWidth,$minWidth, 1);
+	@include adaptive-value-rem('font-size', 64, 34, $maxWidth,$minWidth, 1);
 
 }
 .block-header--horizontal {
@@ -32,5 +32,65 @@
 	p{
 		line-height: 155.556%;
 	}
+}
+.btn{
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: rem(64);
+  border: none;
+  color: #fff;
+  text-decoration: none;
+  background-color: $blue;
+  font-size: 24px;
+	font-weight: 700;
+	line-height: 133.333%;
+  border-radius: rem(60);
+  text-align: center;
+  position: relative;
+  outline: none;
+  transition: background-color .1s ease;
+	
+  &:hover{
+     background-color: lighten($blue, 5%);
+  }
+   
+		
+  &:active{
+   background-color: darken($blue, 5%);
+  }
+  
+  &-fw{
+   width: 100%;
+  }
+  &--iconed{
+  	position: relative;
+
+  	&:after{
+  		content: '';
+  		display: block;
+  		width: rem(48);
+  		height: rem(48);
+  		margin-right: rem(8);
+  		border-radius: 50%;
+  		background-color: #fff;
+  		background-position: center center;
+  		background-repeat: no-repeat;
+  		background-size: rem(20) rem(20);
+  	}
+  }
+
+  &--call{
+  	&:after{
+  		background-image: url(../img/icons/sluhivka.svg);
+  	}
+  }
+
+  span{
+  	display: block;
+  	padding-left: rem(24);
+  	padding-right: rem(16);
+  }
+   
 }
 /*--------------------END ui----------------------*/ 
