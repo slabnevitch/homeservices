@@ -1,8 +1,30 @@
 section.main-block
-	.main-block__image
-		img(src="img/main-block/1.jpg" alt="alt")
-	.main-block__content
-		.block-header.block-header--center
-			h1.block-header__title.block-header__title--big.block-header__title--wht Need improvement or repair your home? we can help!
-	.main-block__image
-		img(src="img/main-block/2.jpg" alt="alt")
+	.main-block__image._fit
+		img(class="_fit-img" src="img/main-block/1.jpg" alt="alt")
+	.main-block__body
+		.main-block__content
+			- var drops = ['Maintenances', 'Repairs', 'Improvements'];
+			ul.main-block__drops
+				each drop in drops
+					li.main-block__drop= drop
+			.block-header.block-header--center
+				h1.block-header__title.block-header__title--big.block-header__title--wht Need improvement or repair your home? we can help!
+			
+			ul.dones
+				li.done Free Quotes
+				li.done 100% Commitment-Free 
+			.main-block__button
+				a(href="#").btn.call-btn
+					span Call Us Now
+		
+		- var features = [{icon: 'garant', text: 'Satisfaction Guarantee'}, {icon: 'clock', text: '24H Availability'}, {icon: 'lock', text: 'Local US Professional'}, {icon: 'calendar', text: 'Flexible Appointmentsl'}];
+		.main-block__features
+			each item in features
+				.main-block__feature.feature-main-block
+					.feature-main-block__icon
+						img(src="img/icons/"+item.icon+".svg" alt="alt")
+					.feature-main-block__text
+						p= item.text
+
+	.main-block__image._fit
+		img(class="_fit-img" src="img/main-block/2.jpg" alt="alt")
