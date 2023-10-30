@@ -592,6 +592,7 @@ h1 {
 
 /*--------------------main-block----------------------*/
 .main-block {
+  position: relative;
   padding-top: 5rem;
   display: -ms-grid;
   display: grid;
@@ -602,6 +603,7 @@ h1 {
 }
 @media only screen and (max-width: 61.9375em) {
   .main-block {
+    padding-bottom: 2.8125rem;
     -ms-grid-columns: auto;
     grid-template-columns: auto;
   }
@@ -670,6 +672,11 @@ h1 {
   column-gap: 1.75rem;
   row-gap: 0.625rem;
 }
+@media only screen and (max-width: 36em) {
+  .main-block__drops {
+    column-gap: 1rem;
+  }
+}
 
 .main-block__drop {
   list-style-type: none;
@@ -688,8 +695,18 @@ h1 {
   margin-right: 1.5rem;
   background-color: #9EA3B5;
 }
+@media only screen and (max-width: 36em) {
+  .main-block__drop:before {
+    margin-right: 1rem;
+  }
+}
 .main-block__drop:first-child:before {
   display: none;
+}
+@media only screen and (max-width: 36em) {
+  .main-block__drop {
+    font-size: 0.875rem;
+  }
 }
 
 .dones {
@@ -702,6 +719,11 @@ h1 {
   column-gap: 2.5625rem;
   row-gap: 0.9375rem;
 }
+@media only screen and (max-width: 36em) {
+  .dones {
+    column-gap: 1.5rem;
+  }
+}
 
 .done {
   list-style-type: none;
@@ -711,6 +733,12 @@ h1 {
   background-position: left center;
   background-repeat: no-repeat;
   background-size: 1.125rem;
+}
+@media only screen and (max-width: 36em) {
+  .done {
+    font-size: 0.875rem;
+    padding-left: 1.5rem;
+  }
 }
 
 .main-block__button {
@@ -736,11 +764,32 @@ h1 {
     grid-template-columns: repeat(2, auto);
   }
 }
-@media only screen and (max-width: 36em) {
+@media only screen and (max-width: 61.9375em) {
   .main-block__features {
-    -ms-grid-columns: auto;
-    grid-template-columns: auto;
+    grid-row-gap: 2.5rem;
+    position: relative;
   }
+}
+.main-block__features:before, .main-block__features:after {
+  content: "";
+  position: absolute;
+  display: block;
+}
+.main-block__features:before {
+  width: 100%;
+  height: 0.0625rem;
+  top: 50%;
+  left: 0;
+  background: rgb(20, 34, 87);
+  background: linear-gradient(90deg, rgb(20, 34, 87) 0%, rgb(79, 102, 176) 50%, rgb(20, 34, 80) 100%);
+}
+.main-block__features:after {
+  width: 0.0625rem;
+  height: 100%;
+  top: 0;
+  left: 50%;
+  background: rgb(20, 34, 87);
+  background: linear-gradient(0deg, rgb(20, 34, 87) 0%, rgb(79, 102, 176) 50%, rgb(20, 34, 80) 100%);
 }
 
 .feature-main-block {
@@ -772,6 +821,14 @@ h1 {
     display: none;
   }
 }
+@media only screen and (max-width: 61.9375em) {
+  .feature-main-block {
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding-left: 0.9375rem;
+    padding-rigth: 0.9375rem;
+  }
+}
 
 .feature-main-block__icon {
   display: -ms-flexbox;
@@ -780,6 +837,7 @@ h1 {
   align-items: center;
   -ms-flex-pack: center;
   justify-content: center;
+  width: 3rem;
   -ms-flex: 0 0 3rem;
   flex: 0 0 3rem;
   height: 3rem;
@@ -791,6 +849,62 @@ h1 {
   color: #fff;
   font-weight: 600;
   line-height: 133.333%;
+}
+@media only screen and (max-width: 61.9375em) {
+  .feature-main-block__text {
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 47.99875em) {
+  .feature-main-block__text {
+    font-size: 0.875rem;
+  }
+}
+
+.main-block__decor {
+  margin-top: 15px;
+  -ms-grid-column: span 3;
+  grid-column: span 3;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  height: 2.8125rem;
+}
+@media only screen and (max-width: 61.9375em) {
+  .main-block__decor {
+    display: none;
+  }
+}
+
+.main-block__decor-left,
+.main-block__decor-right {
+  position: relative;
+  bottom: 0;
+  width: 21.8335983042%;
+  background-color: #fff;
+}
+.main-block__decor-left:before,
+.main-block__decor-right:before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 3.75rem;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 102%;
+}
+
+.main-block__decor-left:before {
+  left: 99%;
+  background-position: 100% 0;
+  background-image: url(../img/main-block/decor-left.svg);
+}
+
+.main-block__decor-right:before {
+  right: 99%;
+  background-position: 0 0;
+  background-image: url(../img/main-block/decor-right.svg);
 }
 
 /*--------------------END main-block----------------------*/
