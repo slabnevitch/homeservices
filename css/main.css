@@ -598,6 +598,8 @@ h1 {
   display: grid;
   -ms-grid-columns: 21.8335983042% 1fr 21.8335983042%;
   grid-template-columns: 21.8335983042% 1fr 21.8335983042%;
+  -ms-grid-rows: auto 2.8125rem;
+  grid-template-rows: auto 2.8125rem;
   min-height: 100vh;
   background-color: #142257;
 }
@@ -770,10 +772,12 @@ h1 {
     position: relative;
   }
 }
-.main-block__features:before, .main-block__features:after {
-  content: "";
-  position: absolute;
-  display: block;
+@media only screen and (max-width: 61.9375em) {
+  .main-block__features:before, .main-block__features:after {
+    content: "";
+    position: absolute;
+    display: block;
+  }
 }
 .main-block__features:before {
   width: 100%;

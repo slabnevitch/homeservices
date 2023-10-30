@@ -5,6 +5,7 @@
 	
 	display: grid;
 	grid-template-columns: prc(412,1887) 1fr prc(412,1887);
+	grid-template-rows: auto rem(45);
 	min-height: 100vh;
 	background-color: $accent;
 
@@ -140,10 +141,12 @@
 	}
 	&:before,
 	&:after{
-		content: '';
-		position: absolute;
-		display: block;
-		// background-color: #fff;
+
+		@include max-screen($md){
+			content: '';
+			position: absolute;
+			display: block;		
+		}
 	}
 	&:before{
 		width: 100%;
