@@ -10,7 +10,7 @@
 	background-color: $accent;
 
 	@include max-screen($md){
-		padding-bottom: rem(45);
+		// padding-bottom: rem(45);
 		grid-template-columns: auto;
 	}
 }
@@ -229,7 +229,7 @@ background: linear-gradient(0deg, rgba(20,34,87,1) 0%, rgba(79,102,176,1) 50%, r
 	height: rem(45);
 
 	@include max-screen($md){
-		display: none;
+		// display: none;
 	}
 }
 .main-block__decor-left,
@@ -238,6 +238,11 @@ background: linear-gradient(0deg, rgba(20,34,87,1) 0%, rgba(79,102,176,1) 50%, r
 	bottom: 0;
 	width: prc(412,1887);
 	background-color: #fff;
+
+	@include max-screen($sm){
+		width: prc(30,375);
+		
+	}
 
 	&:before{
 		content: '';
@@ -252,7 +257,7 @@ background: linear-gradient(0deg, rgba(20,34,87,1) 0%, rgba(79,102,176,1) 50%, r
 .main-block__decor-left{
 	&:before{
 		left: 99%;
-		background-position: 100% 0;
+		background-position: 100% -1px;
 		background-image: url(../img/main-block/decor-left.svg);
 
 	}
@@ -260,7 +265,7 @@ background: linear-gradient(0deg, rgba(20,34,87,1) 0%, rgba(79,102,176,1) 50%, r
 .main-block__decor-right{
 	&:before{
 		right: 99%;
-		background-position: 0 0;
+		background-position: 0 -1px;
 		background-image: url(../img/main-block/decor-right.svg);
 	}
 }
