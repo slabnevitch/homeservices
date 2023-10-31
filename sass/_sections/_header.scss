@@ -79,6 +79,10 @@
 				text-decoration: underline;
 			}
 		}
+	&.active{
+		text-decoration: underline;
+		
+	}
 }
 .menu-header__top{
 	flex-shrink: 0;

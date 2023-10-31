@@ -13,8 +13,17 @@ header.header
 						.toggle-mnu.on.toggle-mnu--close
 							span
 
-				+menu('menu-header', ['About Us', 'Services', 'Our Blog', 'Contact '])
-		
+				//- +menu('menu-header', ['About Us', 'Services', 'Our Blog', 'Contact'])
+				ul.menu-header__list
+					li.menu-header__item
+						a(href="#").menu-header__link(data-anchor="prof") About Us
+					li.menu-header__item
+						a(href="#").menu-header__link(data-anchor="service") Services
+					li.menu-header__item
+						a(href="#").menu-header__link(data-anchor="blog") Our Blog
+					li.menu-header__item
+						a(href="#").menu-header__link(data-anchor="contacts") Contact
+
 		.header__schedule(data-da=".menu-header__body,767.98,last") 24 Hour Services
 
 

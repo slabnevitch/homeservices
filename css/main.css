@@ -672,6 +672,9 @@ h1 {
     text-decoration: underline;
   }
 }
+.menu-header__link.active {
+  text-decoration: underline;
+}
 
 .menu-header__top {
   -ms-flex-negative: 0;

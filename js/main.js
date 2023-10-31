@@ -17,7 +17,7 @@ require ('~/app/libs-vanilla/service-functions/ibg-class.js');
 // import {removeClass} from '~/app/libs-vanilla/service-functions/all-functions.js';
 
 //- siblings--------------------------
-// import {siblings} from '~/app/libs-vanilla/service-functions/all-functions.js';
+import {siblings} from '~/app/libs-vanilla/service-functions/all-functions.js';
 
 //- fadeIn--------------------------
 // import {fadeIn} from '~/app/libs-vanilla/service-functions/all-functions.js';
@@ -39,6 +39,9 @@ require ('~/app/libs-vanilla/service-functions/ibg-class.js');
 
 //- scrollWidth(фикс прыгания стр-цы. при открытии модалки--------------------------
 // require ('~/app/libs-vanilla/service-functions/scrollWidth.js');
+
+//- scroll-to-sects--------------------------
+import {ScrollToSects} from '~/app/libs-vanilla/service-functions/all-functions.js';
 
 //- All in one file--------------------------
 // require('~/app/libs-vanilla/service-functions/all-functions.js')
@@ -120,9 +123,6 @@ require('~/app/libs-vanilla/dynamic-adaptive/da(es6).js')
 //- ratings--------------------------
 // require('~/app/libs-vanilla/rating/ratings.js')
 
-//- scroll-to-sects--------------------------
-// import {ScrollToSects} from '~/app/libs-vanilla/scroll-to-sects/scrolltosect.js';
-
 //- tippy--------------------------
 //- https://atomiks.github.io/tippyjs/
 //- base using:  html: <button data-tippy-content="Tooltip">Text</button>; js: tippy('[data-tippy-content]');
@@ -153,7 +153,7 @@ require('~/app/libs-vanilla/dynamic-adaptive/da(es6).js')
 
 // });
 
-// console.log(magnificPopup)
+console.log(ScrollToSects);
 
 document.addEventListener('DOMContentLoaded', () => {
 	document.querySelector('.toggle-mnu:not(.toggle-mnu--close)').onclick = function(e) {
@@ -166,4 +166,13 @@ document.addEventListener('DOMContentLoaded', () => {
 		document.documentElement.classList.remove('menu-opened');
 		document.documentElement.classList.remove('lock');
 	}
+	new ScrollToSects({
+	  // linksContainer: 'header',//контейнер, в котором лежат кнопки навигации
+	  offset: 80,//отступ от верха экрана при прокрутке (если нужен)
+	  // sectsSelector: '.sect',//селектор секций, если не section
+	   // delay: 0,//задержка перед прокруткой. Может понадобится, елсли перед прокруткой нужно время на анимацию закрытия моб. меню, например
+	    anchorSpy: true, //добавление активного класса ссылке при скролле, если соответствующая ей секция попадает в экран
+	    activeClassAdding: false //добавление классов активным ссылкам
+	});
+	
 }); //DOMContentLoaded
