@@ -2,6 +2,12 @@
 .block-header {
 	display: grid;
 	gap: rem(24);
+
+  &--wht{
+    .block-header__text{
+      color: #fff;
+    }
+  }
 }
 .block-header--center {
 	text-align: center;
@@ -62,6 +68,10 @@
   
   &-fw{
    width: 100%;
+  }
+  &--wht{
+    background-color: #fff;
+    color: $blue;
   }
   &--iconed{
   	position: relative;

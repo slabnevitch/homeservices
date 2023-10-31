@@ -1,0 +1,20 @@
+section.advantages
+	.advantages__wrapper
+		.advantages__container
+			.block-header.block-header--horizontal.block-header--wht
+				h2.block-header__title.block-header__title--wht Need improvement or repair your home? we can help!
+
+				.block-header__text
+					p You need help for home care? We are home care professionals focused in the US region. We provide several services that support home services
+
+			.advantages__items
+				- var huys = [{title: "Satisfaction Guarantee", text: "you don't need to worry about scams or our performance results. our company has been verified and strives for optimal results"}];
+
+				- for (var i=0; i < 6; i++)
+					each item, n in huys
+						.advantages__item.item-advantages
+							.item-advantages__icon
+								img(src="img/icons/advantages" + (n+1) + ".svg" alt="alt")
+							.item-advantages__title= item.title
+							.item-advantages__text
+								p= item.text

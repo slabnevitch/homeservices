@@ -1,8 +1,8 @@
 // Import vendor jQuery plugin example (not module)
 // import $ from '~/app/libs/jquery/jquery.min.js';
-import $ from 'jquery'
-window.jQuery = $;
-window.$ = $;
+// import $ from 'jquery'
+// window.jQuery = $;
+// window.$ = $;
 // console.log($)
 
 // import Swiper, { Navigation, Mousewheel } from 'swiper';
@@ -71,7 +71,7 @@ require ('~/app/libs-vanilla/service-functions/ibg-class.js');
 
 //- VANILLA JS===================================
 //- dynamic-adaptive--------------------------
-// require('~/app/libs-vanilla/dynamic-adaptive/da(es6).js')
+require('~/app/libs-vanilla/dynamic-adaptive/da(es6).js')
 	
 //- slideout--------------------------
 // var Slideout = require('~/app/libs-vanilla/slideout/slideout.js')
@@ -148,13 +148,22 @@ require ('~/app/libs-vanilla/service-functions/ibg-class.js');
 	
 //- end VANILLA JS===================================
 
-jQuery(document).ready(function() {
-	console.log('jQuery document ready');
+// jQuery(document).ready(function() {
+// 	console.log('jQuery document ready');
 
-});
+// });
 
 // console.log(magnificPopup)
 
 document.addEventListener('DOMContentLoaded', () => {
-
+	document.querySelector('.toggle-mnu:not(.toggle-mnu--close)').onclick = function(e) {
+			// this.classList.toggle('on');
+		document.documentElement.classList.add('menu-opened');
+		document.documentElement.classList.add('lock');
+	}
+	document.querySelector('.toggle-mnu--close').onclick = function(e) {
+			// this.classList.toggle('on');
+		document.documentElement.classList.remove('menu-opened');
+		document.documentElement.classList.remove('lock');
+	}
 }); //DOMContentLoaded

@@ -5,3 +5,21 @@ section.service
 
 			.block-header__text
 				p You have problems with leaking pipes, broken tiles, lost keys or want to tidy up the trees around you, of course you need our help!
+
+		.service__items
+			- let items = [{title: 'Plumbing services', text: 'Drain pipe leaking, pipe clogged, replace the pipe line'}];
+			- for (var n=0; n < 7; n++)
+				each item, i in items
+					.service__item.item-service
+						.item-service__icon
+							img(src="img/icons/service/" + (n+1) + ".svg" alt="alt")
+						h4.item-service__title= item.title
+						.item-service__text
+							p= item.text
+				
+			.service__item.item-service.item-service--blue
+				h4.item-service__title More service?
+				.item-service__text
+					p You can tell us what you need and we can help! 
+				a(href="#").btn.btn-fw.btn--wht
+					span Call Us Now

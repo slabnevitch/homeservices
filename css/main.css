@@ -290,6 +290,9 @@ h1 {
   display: grid;
   gap: 1.5rem;
 }
+.block-header--wht .block-header__text {
+  color: #fff;
+}
 
 .block-header--center {
   text-align: center;
@@ -362,6 +365,10 @@ h1 {
 }
 .btn-fw {
   width: 100%;
+}
+.btn--wht {
+  background-color: #fff;
+  color: #15B2F5;
 }
 .btn--iconed {
   position: relative;
@@ -1047,5 +1054,89 @@ h1 {
 
 /*--------------------END prof----------------------*/
 /*--------------------service----------------------*/
+.service {
+  padding-top: 7.5rem;
+}
+@media (max-width: 90em) {
+  .service {
+    padding-top: clamp( 1.875rem , 0.75rem  +  5.625vw , 7.5rem );
+  }
+}
+.service .block-header {
+  max-width: 34.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3.75rem;
+}
+@media (max-width: 90em) {
+  .service .block-header {
+    margin-bottom: clamp( 1.875rem , 1.5rem  +  1.875vw , 3.75rem );
+  }
+}
+
+.service__items {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(22.5rem, 1fr))[auto-fit];
+  grid-template-columns: repeat(auto-fit, minmax(22.5rem, 1fr));
+}
+
+.item-service {
+  padding: 2rem;
+}
+@media only screen and (max-width: 47.99875em) {
+  .item-service {
+    text-align: center;
+  }
+}
+
+.item-service__icon {
+  width: 4rem;
+  height: 4rem;
+  padding: 0.75rem;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background-color: #142257;
+  border-radius: 1.25rem;
+  margin-bottom: 1rem;
+}
+@media only screen and (max-width: 47.99875em) {
+  .item-service__icon {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.item-service__icon img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.item-service__title {
+  margin-bottom: 0.75rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 133.333%;
+}
+
+.item-service__text {
+  color: #9EA3B5;
+}
+.item-service__text:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+.item-service--blue {
+  background-color: #15B2F5;
+  color: #fff;
+  border-radius: 1.5rem;
+}
+.item-service--blue .item-service__text {
+  color: inherit;
+}
+
 /*--------------------END service----------------------*/
 /*# sourceMappingURL=maps/main.css.map */
