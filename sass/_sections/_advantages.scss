@@ -1,0 +1,101 @@
+/*--------------------advantages----------------------*/
+.advantages {
+	color: #fff;
+}
+
+.advantages__wrapper {
+	@include adaptive-value-rem('padding-top', 64, 30, $maxWidth, $minWidth, 1);
+	@include adaptive-value-rem('padding-bottom', 64, 30, $maxWidth, $minWidth, 1);
+	@include adaptive-value-rem('padding-left', 180, 30, $maxWidth, $minWidth, 1);
+	@include adaptive-value-rem('padding-right', 180, 30, $maxWidth, $minWidth, 1);
+
+	position: relative;
+	max-width: rem(1800);
+	margin: 0 auto;
+	border-radius: rem(24);
+	background-color: $accent;
+
+	&:before,
+	&:after{
+		content: '';
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		height: prc(645,880);
+		max-height: rem(645);
+		width: rem(45);
+		background-image: url(../img/adv-decor.svg);
+		background-position: left / auto;
+		background-repeat: no-repeat;
+		background-size: contain;
+
+		@include max-screen($md){
+			display: none;
+		}
+	}
+	&:before{
+		left: 0;
+	}
+	&:after{
+		right: 0;
+		transform: translateY(-50%) rotate(180deg);
+	}
+}
+.advantages__container {}
+.advantages__block-header{
+	@include adaptive-value-rem('padding-bottom', 60, 30, $maxWidth, $minWidth, 1);
+	@include adaptive-value-rem('margin-bottom', 60, 30, $maxWidth, $minWidth, 1);
+	
+	.block-header__text {
+		color: $grayText;
+	}
+}
+.block-header {}
+.block-header--horizontal {}
+.block-header--wht {}
+.block-header__title {}
+.block-header__title--wht {}
+.advantages__items {
+	display: grid;
+	grid-template-columns: repeat(2, auto);
+	row-gap: rem(60);
+	column-gap: rem(30);
+	@include max-screen($md){
+		grid-template-columns: auto;
+		justify-content: center;
+	}
+}
+.advantages__item {
+}
+.item-advantages {
+	max-width: rem(496);
+	display: grid;
+	grid-template-columns:rem(75) 1fr;
+	grid-template-rows: repeat(2, auto);
+	@include adaptive-value-rem('column-gap', 32, 15, $maxWidth, $minWidth, 1);
+	grid-row-gap: rem(12);
+
+	@include max-screen($md){
+		grid-template-columns: auto;
+		grid-template-rows: auto;
+		text-align: center;
+	}
+
+}
+.item-advantages__icon {
+	height: rem(75);
+	grid-row: span 2;
+	img{
+		max-width: 100%;
+	}
+}
+.item-advantages__title {
+	@include adaptive-value-rem('font-size', 24, 16, $maxWidth, $minWidth, 1);
+	font-weight: 600;
+	line-height:  133.333%;
+
+}
+.item-advantages__text {
+	color: $grayText;
+}
+/*--------------------END advantages----------------------*/ 

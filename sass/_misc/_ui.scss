@@ -25,11 +25,18 @@
 
 }
 .block-header--horizontal {
+  display: grid;
 	// grid-template-columns: repeat(2, auto);
 	grid-template-columns: minmax(auto, rem(586)) minmax(auto, rem(613));
 	justify-content: space-between;
 	align-items: end;
+  column-gap: rem(30);
+  grid-row-gap: rem(12);
 
+  @include max-screen($sm){
+    grid-template-columns: auto;
+    text-align: center;
+  }
 }
 .block-header__title--wht {
 	color: #fff;

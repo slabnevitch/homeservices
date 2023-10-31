@@ -1,6 +1,7 @@
 /*--------------------service----------------------*/
 .service {
 	@include adaptive-value-rem('padding-top', 120, 30, $maxWidth, $minWidth, 1);
+	@include adaptive-value-rem('padding-bottom', 120, 30, $maxWidth, $minWidth, 1);
 	.block-header {
 		max-width: rem(552);
 		margin-left: auto;
