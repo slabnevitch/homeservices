@@ -104,7 +104,7 @@ require('~/app/libs-vanilla/dynamic-adaptive/da(es6).js')
 // const Swiper = require('~/app/libs-vanilla/swiper/swiper-bundle.min.js')
 
 //- tiny-slider--------------------------
-// import {tns} from '~/app/libs-vanilla/tiny-slider/dist/tiny-slider-skot.js';
+import {tns} from '~/app/libs-vanilla/tiny-slider/dist/tiny-slider.js';
 
 //- wNumb--------------------------
 // var wNumb = require('~/app/libs-vanilla/wnumb/wNumb.js')
@@ -174,5 +174,41 @@ document.addEventListener('DOMContentLoaded', () => {
 	    anchorSpy: true, //добавление активного класса ссылке при скролле, если соответствующая ей секция попадает в экран
 	    activeClassAdding: false //добавление классов активным ссылкам
 	});
+
+	if(document.querySelector('.reviews__sldr') !== null){
+		var slider = tns({
+			container: '.reviews__sldr',
+				mode: 'carousel', //'gallery' - для фэйд-анимации отдельных слайдов
+				items: 1,
+				loop: false,
+				slideBy: 1, // кол-во слайдов, перематывающихся за 1 клик. Не работает с mode: 'gallery'
+				// autoplay: true,
+				// controls: false, // отключение кнопок "вперед/назад"
+				controlsContainer: '.tiny-carousel__nav', // внутри .block-header__nav должны быть 2 заранее отстилизованные кнопки
+				// navContainer: "#customize-thumbnails",//конткйнер для навигации миниатюрами
+				// navAsThumbnails: true, //включение навигации миниатюрами
+				// nav: false, //отключение bullets
+				navPosition: 'bottom',//положение bullets
+				mouseDrag: true,
+				gutter: 10, //добавляет padding, а не margin! Нужна обертка вокруг содержимого каждого слайда!
+				responsive: { // mobile first!
+					375: {
+
+				      // items: 1.1
+				  },
+				  640: {
+				      // edgePadding: 20,
+				      // gutter: 20,
+				      // items: 2
+				  },
+				  700: {
+				      // gutter: 30
+				  },
+				  900: {
+				      // items: 3
+				  }
+				}
+			});
+	}
 	
 }); //DOMContentLoaded

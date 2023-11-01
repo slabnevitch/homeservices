@@ -1,0 +1,65 @@
+/*--------------------reviews----------------------*/
+.reviews {
+	@include adaptive-value-rem('padding-top', 131, 30, $maxWidth, $minWidth, 1);
+	@include adaptive-value-rem('padding-bottom', 131, 30, $maxWidth, $minWidth, 1);
+}
+.reviews__container {}
+.reviews__block-header {
+	max-width: rem(650);
+	margin-left: auto;
+	margin-right: auto;
+	@include adaptive-value-rem('margin-bottom', calc(66 + 24), 24, $maxWidth, $minWidth, 1)
+}
+.reviews__carousel {
+	max-width: rem(986);
+	margin-left: auto;
+	margin-right: auto;
+}
+.tiny-carousel {
+	position: relative;
+	text-align: center;
+}
+.tiny-carousel__nav {
+	button{
+		@include but-null();
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: absolute;
+		top: 50%;
+		width: rem(48);
+		height: rem(48);
+		background-color: $blue;
+		border-radius: 50%;
+		background-image: url(../img/icons/arrow-right.svg);
+		background-position: center center;
+		background-repeat: no-repeat;
+		// background-size: cover;
+		cursor: pointer;
+
+		&[disabled]{
+			background-color:$grayButton;
+		}
+	}
+}
+.tns-prev {
+	transform: rotate(180deg);
+	left: rem(- calc(24 + 48));
+}
+.tns-next {
+	right: rem(- calc(24 + 48));
+
+}
+.reviews__sldr {}
+.reviews__sld {}
+.sld-reviews {}
+.sld-reviews__logo {}
+.sld-reviews__text {}
+.sld-reviews__author {}
+.sld-reviews__avatar {}
+.sld-reviews__name {}
+.sld-reviews__rating {}
+.star-rating {}
+.star-rating__star {}
+.active {}
+/*--------------------END reviews----------------------*/ 

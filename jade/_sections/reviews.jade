@@ -1,0 +1,26 @@
+section.reviews
+	.reviews__container
+		.reviews__block-header.block-header.block-header--center
+			h2.block-header__title Here our original reviews from trusted platform
+		
+		.reviews__carousel.tiny-carousel
+			.tiny-carousel__nav
+				button(type="button" class="tns-prev")
+				button(type="button" class="tns-next")
+
+			.reviews__sldr
+				- for (var i=0; i < 2; i++)
+					.reviews__sld
+						.reviews__sld.sld-reviews
+							.sld-reviews__logo
+								img(src="img/reviews/logo.png" alt="alt")
+							.sld-reviews__text
+								p
+									| Roof repairs can be a real headache, but HomePro makes it easy! Their roofing team turned my leaky roof into a stockade. With their craftsmanship and the best materials, my house is now ready to weather any storm.
+							.sld-reviews__author
+								.sld-reviews__avatar
+									img(src="img/reviews/avatar.png" alt="alt")
+								.sld-reviews__name Kende Attila
+								.sld-reviews__rating
+									+starRating(4)
+
