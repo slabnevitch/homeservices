@@ -58,8 +58,15 @@
 .sld-reviews__author {}
 .sld-reviews__avatar {}
 .sld-reviews__name {}
-.sld-reviews__rating {}
-.star-rating {}
+.sld-reviews__rating {
+	display: flex;
+	justify-content: center;
+	.star-rating {
+
+		@include star-rating($grayButton, #FFA928, 20px, 1px, false);
+	}
+
+}
 .star-rating__star {}
 .active {}
 /*--------------------END reviews----------------------*/ 

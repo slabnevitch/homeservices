@@ -227,9 +227,7 @@
 		  letter-spacing: normal;
 		}
 }
-.star-rating{
-	@include star-rating(red, gold, 50px, 20px, false);
-}
+
 .simple-rating{
 	// @include simple-rating(#000, gold, 50px, 30px, false);
 	@include simple-rating(red, gold, 35px, 25px, false);
