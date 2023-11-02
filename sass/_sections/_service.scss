@@ -18,6 +18,10 @@
 .service__items {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(rem(360), 1fr));
+
+	@include max-screen($xss){
+		grid-template-columns: auto;
+	}
 }
 .service__item {}
 .item-service {

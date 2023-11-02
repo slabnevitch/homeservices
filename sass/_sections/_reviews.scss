@@ -1,7 +1,7 @@
 /*--------------------reviews----------------------*/
 .reviews {
 	@include adaptive-value-rem('padding-top', 131, 30, $maxWidth, $minWidth, 1);
-	@include adaptive-value-rem('padding-bottom', 131, 30, $maxWidth, $minWidth, 1);
+	@include adaptive-value-rem('padding-bottom', 131, 60, $maxWidth, $minWidth, 1);
 }
 .reviews__container {}
 .reviews__block-header {
@@ -37,6 +37,11 @@
 		// background-size: cover;
 		cursor: pointer;
 
+		@include max-screen($lg){
+			bottom: rem(-24);
+			top: auto;
+		}
+
 		&[disabled]{
 			background-color:$grayButton;
 		}
@@ -45,25 +50,82 @@
 .tns-prev {
 	transform: rotate(180deg);
 	left: rem(- calc(24 + 48));
+
+	@include max-screen(em(986)){
+		left: rem(15);
+	}
 }
 .tns-next {
 	right: rem(- calc(24 + 48));
 
+	@include max-screen(em(986)){
+		right: rem(15);
+	}
+
+}
+.tns-nav{
+	@include adaptive-value-rem('margin-top', 106, 40, $maxWidth, $minWidth, 1);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: rem(12);
+	margin-left: auto;
+	margin-right: auto;
+
+	@include max-screen($xs){
+		max-width: rem(112);
+
+	}
+	button{
+		@include but-null();
+		width: rem(12);
+		height: rem(12);
+		border-radius: 50%;
+		background-color: $grayButton;
+		transition: all .3s;
+
+		&.tns-nav-active{
+			width: rem(40);
+			border-radius: rem(24);
+			background-color: $blue;
+		}
+	}
 }
 .reviews__sldr {}
-.reviews__sld {}
+.reviews__sld {
+	display: grid;
+	@include adaptive-value-rem('grid-row-gap', 40, 24, $maxWidth, $minWidth, 1);
+}
 .sld-reviews {}
 .sld-reviews__logo {}
 .sld-reviews__text {}
-.sld-reviews__author {}
-.sld-reviews__avatar {}
-.sld-reviews__name {}
-.sld-reviews__rating {
-	display: flex;
+.sld-reviews__author {
+	display: grid;
+	grid-template-columns: rem(76) auto;
+	grid-template-rows: repeat(3,auto);
+	column-gap: rem(32);
 	justify-content: center;
+}
+.sld-reviews__avatar {
+	height: rem(76);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	grid-row: span 3;
+	overflow: hidden;
+	border-radius: 50%;
+}
+.sld-reviews__name {
+	margin-bottom: 8px;
+	font-size: rem(24);
+	font-weight: 700;
+	line-height:  133.333%;
+}
+.sld-reviews__rating {
 	.star-rating {
 
-		@include star-rating($grayButton, #FFA928, 20px, 1px, false);
+		@include star-rating($grayButton, #FFA928, 15px, 5px, '\e900');
 	}
 
 }
