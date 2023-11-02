@@ -37,7 +37,7 @@
 		// background-size: cover;
 		cursor: pointer;
 
-		@include max-screen($lg){
+		@include max-screen(em(986)){
 			bottom: rem(-24);
 			top: auto;
 		}

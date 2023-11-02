@@ -1018,6 +1018,125 @@ h1 {
   transform: translateX(0);
 }
 
+/*--------------------how----------------------*/
+.how {
+  padding-top: 11.4375rem;
+}
+@media (max-width: 90em) {
+  .how {
+    padding-top: clamp( 2.5rem , 0.7125rem  +  8.9375vw , 11.4375rem );
+  }
+}
+
+.how__container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.875rem;
+}
+@media only screen and (max-width: 62.5em) {
+  .how__container {
+    -ms-grid-columns: auto;
+    grid-template-columns: auto;
+  }
+}
+
+@media only screen and (max-width: 62.5em) {
+  .how__img {
+    -ms-flex-order: 2;
+    order: 2;
+  }
+}
+.how__img img {
+  max-width: 100%;
+  position: relative;
+  left: -5.4375rem;
+}
+@media (max-width: 90em) {
+  .how__img img {
+    left: clamp( 0rem , 1.0875rem  +  -5.4375vw , -5.4375rem );
+  }
+}
+
+.how__block-header {
+  margin-bottom: 3.75rem;
+}
+@media (max-width: 90em) {
+  .how__block-header {
+    margin-bottom: clamp( 1.5rem , 1.05rem  +  2.25vw , 3.75rem );
+  }
+}
+
+.how__list {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  row-gap: 3.25rem;
+  counter-reset: myCounter;
+  margin: 0;
+  padding: 0;
+}
+.how__list li {
+  position: relative;
+  list-style-type: none;
+}
+.how__list li:before {
+  counter-increment: myCounter;
+  content: counter(myCounter) ".";
+}
+
+.item-how {
+  padding-left: 4.875rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 10.25rem 1fr;
+  grid-template-columns: 10.25rem 1fr;
+  grid-column-gap: 2.25rem;
+  grid-row-gap: 1.5rem;
+}
+@media only screen and (max-width: 36em) {
+  .item-how {
+    -ms-grid-columns: auto;
+    grid-template-columns: auto;
+    grid-row-gap: 2.25rem;
+  }
+}
+.item-how:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 3.25rem;
+  font-weight: 700;
+  line-height: 100%;
+  color: #9EA3B5;
+}
+
+.item-how__name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 133.333%;
+}
+@media (max-width: 90em) {
+  .item-how__name {
+    font-size: clamp( 1.25rem , 1.2rem  +  0.25vw , 1.5rem );
+  }
+}
+@media only screen and (max-width: 36em) {
+  .item-how__name {
+    max-width: 10.25rem;
+  }
+}
+
+@media only screen and (max-width: 36em) {
+  .item-how__text {
+    margin-left: -4.875rem;
+  }
+}
+
+/*--------------------END how----------------------*/
 /*--------------------main-block----------------------*/
 .main-block {
   position: relative;
@@ -1534,7 +1653,7 @@ h1 {
   background-repeat: no-repeat;
   cursor: pointer;
 }
-@media only screen and (max-width: 90em) {
+@media only screen and (max-width: 61.625em) {
   .tiny-carousel__nav button {
     bottom: -1.5rem;
     top: auto;
