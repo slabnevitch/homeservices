@@ -1088,26 +1088,20 @@ h1 {
 }
 
 .item-how {
-  padding-left: 4.875rem;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 10.25rem 1fr;
-  grid-template-columns: 10.25rem 1fr;
+  -ms-grid-columns: 4.875rem 10.25rem 1fr;
+  grid-template-columns: 4.875rem 10.25rem 1fr;
   grid-column-gap: 2.25rem;
   grid-row-gap: 1.5rem;
 }
 @media only screen and (max-width: 36em) {
   .item-how {
-    -ms-grid-columns: auto;
-    grid-template-columns: auto;
-    grid-row-gap: 2.25rem;
+    grid-column-gap: 0.4375rem;
+    grid-row-gap: 0.75rem;
   }
 }
 .item-how:before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
   font-size: 3.25rem;
   font-weight: 700;
   line-height: 100%;
@@ -1132,7 +1126,8 @@ h1 {
 
 @media only screen and (max-width: 36em) {
   .item-how__text {
-    margin-left: -4.875rem;
+    -ms-grid-column: span 3;
+    grid-column: span 3;
   }
 }
 

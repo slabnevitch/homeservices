@@ -1,0 +1,21 @@
+section.blog
+	.blog__container
+		.blog__block-header.block-header.block-header--center
+			h2.block-header__title Explore Insights in Our Blog
+			.block-header__text
+				p Find lots of insights and information on our blog. Explore, learn, and get inspired today.
+
+		.blog__cards
+			article.blog__card.card-blog
+				.card-blog__img._fit
+					img(class="_fit-img" src="img/blog/"+(i+1)+".jpg" alt="alt")
+				.card-blog__date 19 Jan 2023
+				h4.card-blog__title Understanding Smart Home Systems & Maintenance
+				.card-blog__text
+					p Discover the ultimate guide to troubleshooting common smart home issues in our latest blog post. From connectivity problems to device malfunctions, we provide step-by-step solutions to help you restore the seamless functionality of your smart home system. Gain expert insights, practical tips, and insider advice to keep your home automation running smoothly. Don't let technical glitches hinder your smart home experience - empower yourself with the knowledge to resolve issues and enjoy the convenience of your connected home. Visit our blog now and become a troubleshooting pro!
+
+				- var tags = ['Plumbing', 'Architecture', 'Maintenance'];
+				.card-blog__tags
+					each tag in tags
+						a(href="#").tag= tag
+
