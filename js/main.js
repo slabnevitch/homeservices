@@ -210,36 +210,61 @@ document.addEventListener('DOMContentLoaded', () => {
 			});
 	}
 
-	// const cardsRender = function(data) {
-	// 	const cardsContainer = document.querySelector('.blog__cards');
-	// 		console.log('ubut!')
+	const cardsRender = function(data) {
+		const cardsContainer = document.querySelector('.blog__cards');
+			console.log('ubut!');
+		let template = "";
 
-	// 	pizrender = function(cards) {
-	// 		cards.forEach((card) =>{
-	// 			console.log(card);
-	// 		});
-	// 	}
-	// 	init = function() {
-	// 		if(cardsContainer && data){
-	// 			pizrender(data);
-	// 		}
-	// 	}
+		const pizrender = function(cards) {
+			cards.forEach((card) =>{
+				console.log(card);
+				template+= '<article class="blog__card card-blog">';
+
+				if(card.img){
+					template+=`<a href="#" class="card-blog__img _fit"><img src="${card.img}" alt="alt" class="_fit-img"></a>`;
+				}
+
+				if(card.date){
+					template+=`<div class="card-blog__date">${card.date}</div>`;
+				}
+				if(card.title){
+					template+=`<h4 class="card-blog__title"> <a href="#">${card.title}</a></h4>`;
+				}
+				if(card.text){
+					template+=`<div class="card-blog__text">${card.text}</div>`;
+				}
+				if(card.tags && card.tags.length > 0){
+					template+='<div class="card-blog__tags">';
+                  	card.tags.forEach(tag => template+= `<a href="#" class="tag">${tag}</a>`);
+                    template+='</div>';
+				}
+
+				template+= '</article>';
+			});
+			cardsContainer.insertAdjacentHTML('beforeend', template)
+		}
+		const init = function() {
+			if(cardsContainer && data){
+				pizrender(data);
+			}
+
+		}
 			
-	// 	init();
-	// };
-	// axios.get('../src/data/data.json')
-	// 	.then(function (response) {
-	// 	    // handle success
-	// 	    console.log(response);
-	// 	    cardsRender(response);
-	// 	})
-	// 	.catch(function (error) {
-	// 	    // handle error
-	// 	    console.log(error);
-	// 	})
-	// 	.finally(function () {
-	// 	    // always executed
-	// });
+		init();
+	};
+	axios.get('../src/data/data.json')
+		.then(function (response) {
+		    // handle success
+		    console.log(response);
+		    cardsRender(response.data);
+		})
+		.catch(function (error) {
+		    // handle error
+		    console.log(error);
+		})
+		.finally(function () {
+		    // always executed
+	});
 	// console.log(cardsRender)
 	
 }); //DOMContentLoaded
