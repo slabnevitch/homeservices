@@ -11,6 +11,7 @@
 //- SERVIVE FUNCTIONS==================
 
 //- remove-class--------------------------
+const axios = require('axios').default;
 require ('~/app/libs-vanilla/service-functions/ibg-class.js');
 
 //- remove-class--------------------------
@@ -153,8 +154,6 @@ import {tns} from '~/app/libs-vanilla/tiny-slider/dist/tiny-slider.js';
 
 // });
 
-console.log(ScrollToSects);
-
 document.addEventListener('DOMContentLoaded', () => {
 	document.querySelector('.toggle-mnu:not(.toggle-mnu--close)').onclick = function(e) {
 			// this.classList.toggle('on');
@@ -210,5 +209,37 @@ document.addEventListener('DOMContentLoaded', () => {
 				}
 			});
 	}
+
+	// const cardsRender = function(data) {
+	// 	const cardsContainer = document.querySelector('.blog__cards');
+	// 		console.log('ubut!')
+
+	// 	pizrender = function(cards) {
+	// 		cards.forEach((card) =>{
+	// 			console.log(card);
+	// 		});
+	// 	}
+	// 	init = function() {
+	// 		if(cardsContainer && data){
+	// 			pizrender(data);
+	// 		}
+	// 	}
+			
+	// 	init();
+	// };
+	// axios.get('../src/data/data.json')
+	// 	.then(function (response) {
+	// 	    // handle success
+	// 	    console.log(response);
+	// 	    cardsRender(response);
+	// 	})
+	// 	.catch(function (error) {
+	// 	    // handle error
+	// 	    console.log(error);
+	// 	})
+	// 	.finally(function () {
+	// 	    // always executed
+	// });
+	// console.log(cardsRender)
 	
 }); //DOMContentLoaded

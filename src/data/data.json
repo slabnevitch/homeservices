@@ -1,0 +1,41 @@
+[
+	{
+		"id": 1,
+		"img": "img/blog/1.jpg",
+		"date": "19 Jan 2023",
+		"title": "Understanding Smart Home Systems & Maintenance",
+		"text": "Discover the ultimate guide to troubleshooting common smart home issues in our latest blog post. From connectivity problems to device malfunctions, we provide step-by-step solutions to help you restore the seamless functionality of your smart home system. Gain expert insights, practical tips, and insider advice to keep your home automation running smoothly. Don't let technical glitches hinder your smart home experience - empower yourself with the knowledge to resolve issues and enjoy the convenience of your connected home. Visit our blog now and become a troubleshooting pro!",
+		"tags": [
+			"Plumbing",
+			"Architecture",
+			"Maintenance"
+		]
+
+	},
+	{
+		"id": 2,
+		"img": "img/blog/2.jpg",
+		"date": "24 Feb 2022",
+		"title": "The Ultimate Guide to Home Repairs and Renovations",
+		"text": "From connectivity problems to device malfunctions, we provide step-by-step solutions to help you restore the seamless functionality of your smart home system. Gain expert insights, practical tips, and insider advice to keep your home automation running smoothly. Don't let technical glitches hinder your smart home experience - empower yourself with the knowledge to resolve issues and enjoy the convenience of your connected home. Visit our blog now and become a troubleshooting pro!",
+		"tags": [
+			"Plumbing",
+			"Architecture",
+			"Maintenance",
+			"Repar Dah"
+		]
+
+	},
+	{
+		"id": 3,
+		"img": "img/blog/3.jpg",
+		"date": "17 Jul 2023",
+		"title": "Painting Techniques for a Kitchen Refresh",
+		"text": "Painting Techniques for a Kitchen Refresh we provide step-by-step solutions to help you restore the seamless functionality of your smart home system. Gain expert insights, practical tips, and insider advice to keep your home automation running smoothly. Don't let technical glitches hinder your smart home experience - empower yourself with the knowledge to resolve issues and enjoy the convenience of your connected home. Visit our blog now and become a troubleshooting pro!",
+		"tags": [
+			"Plumbing",
+			"Architecture"
+		]
+
+	}
+]

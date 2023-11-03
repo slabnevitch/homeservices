@@ -173,7 +173,7 @@
   float: left;
 }
 
-/*# sourceMappingURL=sourcemaps/tiny-slider.css.map */
+
 /*--end tiny-slider--*/
 /*--tiny-slider--*/
 /*--end tiny-slider--*/
@@ -813,6 +813,126 @@ h1 {
 }
 
 /*--------------------END advantages----------------------*/
+/*--------------------blog----------------------*/
+.blog {
+  padding-bottom: 8.375rem;
+  padding-top: 5.25rem;
+}
+@media (max-width: 90em) {
+  .blog {
+    padding-bottom: clamp( 3rem , 1.925rem  +  5.375vw , 8.375rem );
+  }
+}
+@media (max-width: 90em) {
+  .blog {
+    padding-top: clamp( 2.5rem , 1.95rem  +  2.75vw , 5.25rem );
+  }
+}
+
+.blog__container {
+  display: -ms-grid;
+  display: grid;
+  row-gap: 3.5rem;
+}
+@media (max-width: 90em) {
+  .blog__container {
+    row-gap: clamp( 1.5rem , 1.1rem  +  2vw , 3.5rem );
+  }
+}
+
+.blog__cards {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(22.5rem, 1fr))[auto-fill];
+  grid-template-columns: repeat(auto-fill, minmax(22.5rem, 1fr));
+  gap: 3rem;
+}
+@media (max-width: 90em) {
+  .blog__cards {
+    gap: clamp( 1.875rem , 1.65rem  +  1.125vw , 3rem );
+  }
+}
+@media only screen and (max-width: 30em) {
+  .blog__cards {
+    -ms-grid-columns: auto;
+    grid-template-columns: auto;
+  }
+}
+
+.card-blog {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.card-blog__img {
+  display: block;
+  padding-bottom: 0;
+  aspect-ratio: 448/300;
+  overflow: hidden;
+  border-radius: 1.5rem;
+}
+@media (any-hover: hover) {
+  .card-blog__img {
+    cursor: pointer;
+  }
+  .card-blog__img:hover img {
+    -ms-transform: scale(1.12);
+    transform: scale(1.12);
+  }
+}
+.card-blog__img img {
+  transition: all 0.4s;
+}
+
+.card-blog__text {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  /* autoprefixer: off */
+  -webkit-box-orient: vertical;
+  /* autoprefixer: on */
+  overflow: hidden;
+}
+
+.card-blog__tags {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.tag {
+  padding: 0.5rem 1rem;
+  border-radius: 62.4375rem;
+  background-color: #9EA3B5;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #fff;
+}
+@media (any-hover: hover) {
+  .tag {
+    cursor: pointer;
+  }
+  .tag:hover {
+    background-color: #9095aa;
+  }
+}
+
+.blog__more {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  justify-self: center;
+  color: #15B2F5;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+/*--------------------END blog----------------------*/
 .header {
   position: fixed;
   left: 0;

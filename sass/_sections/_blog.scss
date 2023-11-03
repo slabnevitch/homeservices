@@ -1,0 +1,85 @@
+/*--------------------blog----------------------*/
+.blog {
+		@include adaptive-value-rem('padding-bottom', 134, 48, $maxWidth, $minWidth, 1);
+		@include adaptive-value-rem('padding-top', 84, 40, $maxWidth, $minWidth, 1);
+
+}
+.blog__container {
+	display: grid;
+		@include adaptive-value-rem('row-gap', 56, 24, $maxWidth, $minWidth, 1);
+}
+.blog__block-header {
+}
+.block-header {}
+.block-header--center {}
+.block-header__title {}
+.block-header__text {}
+.blog__cards {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(rem(360), 1fr));
+		@include adaptive-value-rem('gap', 48, 30, $maxWidth, $minWidth, 1);
+	@include max-screen($xss){
+		grid-template-columns: auto;
+	}
+}
+.blog__card {}
+.card-blog {
+	display: flex;
+	flex-direction: column;
+	gap: rem(24);
+}
+.card-blog__img {
+	display: block;
+	padding-bottom: 0;
+	aspect-ratio: 448/300;
+	overflow: hidden;
+	border-radius: rem(24);
+
+	@media (any-hover: hover) { //только для устройств с ховером
+			cursor: pointer;
+			&:hover{
+				img{
+					transform: scale(1.12);
+				}
+			}
+		}
+	img{
+		transition: all .4s;
+	}
+}
+._fit {}
+._fit-img {}
+.card-blog__date {}
+.card-blog__title {}
+.card-blog__text {
+	@include dots-family-multi(3);
+}
+.card-blog__tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: rem(12);
+}
+.tag {
+	padding: rem(8) rem(16);
+	border-radius: rem(999);
+	background-color: $grayText;
+	font-size: rem(14);
+	font-weight: 600;
+	text-decoration: none;
+	color: #fff;
+
+	@media (any-hover: hover) { //только для устройств с ховером
+			cursor: pointer;
+			&:hover{
+				background-color: darken($grayText, 5%);
+			}
+		}
+}
+.blog__more{
+	@include but-null;
+	justify-self: center;
+	color: $blue;
+	cursor: pointer;
+	font-size: rem(24);
+}
+/*--------------------END blog----------------------*/ 
