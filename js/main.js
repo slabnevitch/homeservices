@@ -249,6 +249,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			});
 			cardsContainer.insertAdjacentHTML('beforeend', template);
 			template = "";
+			document.querySelector('.blog__more').disabled = false;
 		}
 		const cardsFetch = function(length) {
 			console.log('length in fetch=' + length);
@@ -270,6 +271,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			
 			if(document.querySelector('.blog__more') != null){
 				document.querySelector('.blog__more').onclick = function(e) {
+					e.target.disabled = true;
 					cardsFetch(getRandomInt(1, 3));
 				}
 			}

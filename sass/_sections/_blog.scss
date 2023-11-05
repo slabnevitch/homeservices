@@ -76,10 +76,20 @@
 		}
 }
 .blog__more{
+	position: relative;
 	@include but-null;
 	justify-self: center;
 	color: $blue;
 	cursor: pointer;
 	font-size: rem(24);
+
+	img{
+		@include absolute-center;
+		display: none;
+
+		[disabled] &{
+			display: block;
+		}
+	}
 }
 /*--------------------END blog----------------------*/ 
