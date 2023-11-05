@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*--tiny-slider--*/
 .tns-outer {
   padding: 0 !important;
@@ -156,4 +157,66 @@
 /*--end tiny-slider--*/
 /*--FormHandler-*/
 /*--end FormHandler--*/
+/*--spoilers-*/
+[data-spoilers] {
+  --animation-duration: 0.3s;
+}
+
+[data-spoiler-item] {
+  transition: var(--animation-duration);
+}
+[data-spoiler-title] {
+  position: relative;
+  list-style: none; /* убираем стандартный маркер Firefox */
+  cursor: pointer;
+}
+[data-spoiler-title]::after {
+  content: "";
+  position: absolute;
+  top: calc(50% - rem(4));
+  right: 0;
+  width: rem(12);
+  height: rem(8);
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 12 8'%3E%3Cpath stroke='%23999' stroke-width='2' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+  transition: var(--animation-duration);
+}
+[data-spoiler-item]:not(.js-details)[open] [data-spoiler-title]::after, [data-spoiler-item].is-open [data-spoiler-title]::after {
+  -ms-transform: rotate(-180deg);
+  transform: rotate(-180deg);
+}
+[data-spoiler-title]::-webkit-details-marker {
+  display: none; /* убираем стандартный маркер Chrome */
+}
+
+.js-details [data-spoiler-content] {
+  max-height: 0;
+  overflow: hidden;
+  animation: slideUp var(--animation-duration);
+}
+.js-details.is-open [data-spoiler-content] {
+  max-height: var(--details-height);
+  animation: slideDown var(--animation-duration);
+}
+
+@keyframes slideUp {
+  0% {
+    max-height: var(--details-height);
+    opacity: 1;
+  }
+  100% {
+    max-height: 0;
+    opacity: 0;
+  }
+}
+@keyframes slideDown {
+  0% {
+    max-height: 0;
+    opacity: 0;
+  }
+  100% {
+    max-height: var(--details-height);
+    opacity: 1;
+  }
+}
+/*--spoilers--*/
 /*# sourceMappingURL=maps/libs.css.map */

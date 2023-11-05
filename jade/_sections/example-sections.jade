@@ -1,15 +1,29 @@
-section.how
-	.how__container
-		.how__img
-			img(src="img/how.jpg" alt="alt")
+section.faq
+	.faq__container
+		.faq__content
+			.faq__block-header.block-header
+				h2.block-header__title Frequently Asked Questions
+				.block-header__text
+					p Still need help? #[a(href="#") Get Help Now]
+		.faq__spoilers.spoilers-faq
+			div(data-spoilers='')
+				div(data-spoilers-items='')
+					details(data-spoiler-item='' open='').spoilers-faq__item
+						summary(data-spoiler-title='').spoilers-faq__title Что такое HTML?
+						div(data-spoiler-content='').spoilers-faq__content
+							.spoilers-faq__text
+								p
+									| HomePro is a home care platform that connects homeowners with professional service providers offering a wide range of home services, including repairs, maintenance, cleaning, and more.
+					details(data-spoiler-item='')
+						summary(data-spoiler-title='') Зачем использовать списки в HTML?
+						div(data-spoiler-content='')
+							.qna__text
+								p
+									| Списки делают информацию более наглядной и удобной дляотображения элементов списка) тоже можно использовать различные теги. восприятия. Более того, внутри списков (точнее, для произвольного отображения элементов списка) тоже можно использовать различные теги.
+					details(data-spoiler-item='')
+						summary(data-spoiler-title='') Для чего нужны таблицы стилей (CSS)?
+						div(data-spoiler-content='')
+							.qna__text
+								p
+									| Таблицы стилей позволяют задать чёткие правила, которые определяют внешний вид контента, тех или иных HTML-элементов и всей страницы в целом. Более того, одни и те же правила можно применять сразу к нескольким веб-страницам, что упрощает сохранение и, при необходимости, изменение единого стиля сайта.
 
-		.how__content
-			.how__block-header.block-header
-				h2.block-header__title How HomePro works?
-			- var list = [{title: 'Call us anytime 24/7', text: 'You can contact us directly, we will quickly put you in touch with our home care professionals who are ready anytime'}, {title: 'Schedule Service', text: 'After connecting your call, our home care experts will answer your questions and provide flexible appointment times'}, {title: 'Your request is complated', text: 'Once your technician arrives, he will diagnose the problem and provide an estimate. If you decide to continue, the technician will get to work'}];
-			
-			ol.how__list
-				each l in list
-					li.how__item.item-how
-						.item-how__name= l.title
-						.item-how__text= l.text

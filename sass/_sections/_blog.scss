@@ -87,9 +87,9 @@
 		@include absolute-center;
 		display: none;
 
-		[disabled] &{
-			display: block;
-		}
+	}
+	&[disabled] img{
+		display: block;
 	}
 }
 /*--------------------END blog----------------------*/ 

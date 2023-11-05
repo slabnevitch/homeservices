@@ -1,0 +1,18 @@
+section.faq
+	.faq__container
+		.faq__content
+			.faq__block-header.block-header
+				h2.block-header__title Frequently Asked Questions
+				.block-header__text
+					p Still need help? #[a(href="#") Get Help Now]
+		- let titles = ['What is HomePro?', 'Are the service providers on HomePro reliable and qualified?', 'Are the service providers on HomePro reliable and qualified?', 'How are payments handled on HomePro?', 'How do I leave a review for a service provider?'];
+		.faq__spoilers.spoilers-faq
+			div(data-spoilers='')
+				div(data-spoilers-items='')
+					each spol, i in titles
+						details(data-spoiler-item='' open=i<1?true:false).spoilers-faq__item
+							summary(data-spoiler-title='').spoilers-faq__title= spol
+							div(data-spoiler-content='').spoilers-faq__content
+								.spoilers-faq__text
+									p
+										| HomePro is a home care platform that connects homeowners with professional service providers offering a wide range of home services, including repairs, maintenance, cleaning, and more.

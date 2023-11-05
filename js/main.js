@@ -146,6 +146,9 @@ import {tns} from '~/app/libs-vanilla/tiny-slider/dist/tiny-slider.js';
 
 //- counter--------------------------
 // require('./vendor/libs-vanilla/counter/counter.js')
+
+//- spoilers-------------------------
+require('~/app/libs-vanilla/spoilers/spoilers.js')
 	
 //- end VANILLA JS===================================
 

@@ -1,0 +1,52 @@
+/*------------------------------------------*/
+.faq {
+	@include adaptive-value-rem('padding-top', 190, 40, $maxWidth, $minWidth, 1);
+	@include adaptive-value-rem('padding-bottom', 230, 40, $maxWidth, $minWidth, 1);
+}
+.faq__container {
+	display: grid;
+	grid-template-columns: 1fr prc(833, $maxWidthContainer);
+	// @include adaptive-value-rem('gap', 230, 40, $maxWidth, $minWidth, 1);
+	gap: rem(30);
+
+	@include max-screen($md){
+		grid-template-columns: auto;
+	}
+}
+.faq__content {}
+.faq__block-header {
+	max-width: rem(469);
+
+	@include max-screen($md){
+		text-align: center;
+		margin: 0 auto;
+	}
+}
+.block-header {}
+.block-header__title {}
+.block-header__text {
+	a{
+		color: $blue;
+	}
+}
+.faq__spoilers {}
+.spoilers-faq {}
+.spoilers-faq__item {
+	padding: rem(24) rem(32);
+	border-radius: rem(12);
+	&[open]{
+		background-color: $gray-l;
+	}
+}
+.spoilers-faq__title {
+	padding-right: rem(32);
+	margin-bottom: rem(16);
+	@include adaptive-value-rem('font-size', 24, 18, $maxWidth, $minWidth, 1);
+
+font-weight: 700;
+line-height: 133.333%;
+}
+.spoilers-faq__content {}
+.spoilers-faq__text {}
+.qna__text {}
+/*--------------------END ----------------------*/ 
