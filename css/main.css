@@ -2158,4 +2158,26 @@ h1 {
 }
 
 /*--------------------END service----------------------*/
+/*--------------------talk----------------------*/
+.talk__container {
+  max-width: none;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+  grid-template-columns: repeat(2, 1fr);
+  -ms-grid-column-align: end;
+  justify-items: end;
+  background-color: #142257;
+}
+
+.talk__content {
+  max-width: 41.375rem;
+  grid-area: auto auto/1fr 1fr;
+}
+
+.talk__image {
+  grid-area: auto auto/1fr 1fr;
+}
+
+/*--------------------END talk----------------------*/
 /*# sourceMappingURL=maps/main.css.map */

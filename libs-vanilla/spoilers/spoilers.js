@@ -112,7 +112,7 @@
       }, milliseconds);
     }
 
-    if (!minimizeSiblings) return;
+    if (!item.closest('[data-spoilers]').hasAttribute('data-minimizeSiblings')) return;
     
     const siblings = Array.prototype.slice.call(item.parentNode.children)
       .filter(function(el){return el.classList.contains('js-details')})
@@ -198,7 +198,7 @@
   init();
 }
   if(document.querySelectorAll('[data-spoiler-item]') != null){
-     detailsSpoilers(0);//true - при открытии одного спойлера закрываются его сиблинги; false - не закрываются
+     detailsSpoilers();
   }
  
 })();

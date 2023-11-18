@@ -1,0 +1,29 @@
+/*--------------------talk----------------------*/
+.talk {
+}
+.talk__container {
+	max-width: none;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	justify-items: end;
+	background-color: $accent;
+
+}
+.talk__content {
+	max-width: rem(662);
+	grid-area:auto auto / 1fr 1fr;
+}
+.block-header {}
+.block-header__title {}
+.block-header__title--big {}
+.block-header__title--wht {}
+.dones {}
+.done {}
+.talk__button {}
+.btn {}
+.btn--iconed {}
+.btn--call {}
+.talk__image {
+	grid-area: auto auto / 1fr 1fr;
+}
+/*--------------------END talk----------------------*/ 
