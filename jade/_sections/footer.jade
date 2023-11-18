@@ -1,1 +1,35 @@
-footer.footer
+footer.footer(data-anchor="contacts")
+	.footer__container
+		.footer__content
+			.footer__subscribe.subscribe
+				.subscribe__body
+					.subscribe__title Stay Connected with Our Newsletter
+					.subscribe__text
+						p Subscribe to our newsletter to get more news, promo, or news services
+
+				form(action="#" class="subscribe__form")
+					input(autocomplete="off" type="text" name="" class="subscribe__input" placeholder="Enter email address")
+					button(type="submit").btn.btn--call.subscribe__button Subscribe
+
+			.footer__body
+				.footer__info
+					.footer__logo
+						img(src="img/footer/logo.svg" alt="alt") 
+					.footer__text Home Pro is your premier destination for top-notch smart home service and repair.
+					- let socs = ['youtube', 'instagram', 'facebook', 'twitter', 'mail']; 
+					ul.footer__soc.soc
+						each soc in socs
+							li.soc__item
+								a(href="#").soc_link
+									img(src="img/footer/"+soc+".svg" alt="alt")
+
+				.footer__menu.menu-footer
+					- let menus = [{title: 'Company', items: ['About us','Services','Our Blog','Contact']}, {title: 'Legal', items: ['Legal','Terms','Privacy','Cookies','License']}];
+						each spol in menus
+							div(data-spoilers='' data-point="480" data-minimizeSiblings)
+								details(data-spoiler-item='').menu-footer__item
+									summary(data-spoiler-title='').menu-footer__title= spol.title
+									div(data-spoiler-content='')
+										+menu('menu-footer', spol.items)
+
+	.footer__copy ©2023 HomePro . All rights reserved

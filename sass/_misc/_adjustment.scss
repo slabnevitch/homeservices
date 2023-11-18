@@ -121,15 +121,19 @@ input[type="text"],
 input[type="email"],
 input[type="tel"],
 textarea{
+	-webkit-appearance: none;
+	-moz-appearance: none;
 	appearance: none;
 }
 .input,
 input{
+	border-radius: 0;
 	outline: none;
 	display: block;
 	width: 100%;
+	border: 0 none;
 }
-textarea.input{
+textarea{
 	resize: none;
 	padding: 0 0;
 }
